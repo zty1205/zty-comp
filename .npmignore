@@ -1,0 +1,17 @@
+# 忽略目录
+examples/
+packages/
+public/
+utils/
+node_modules/
+ 
+# 忽略指定文件
+.browserslistrc
+.editorconfig
+.eslintignore
+.eslintrc
+vue.config.js
+babel.config.js
+postcss.config.js
+yarn.lock
+*.map

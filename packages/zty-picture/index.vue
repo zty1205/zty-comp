@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: 'Picture',
+  name: 'ztyPicture',
   props: {
     data: {
       type: [Object, String],

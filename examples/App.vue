@@ -4,9 +4,9 @@
     <zty-marquee :data="marqueeList"></zty-marquee>
     <div class="box"></div>
     <div class="img">
-      <Picture :data="tempData" :resolver="dataResolver"></Picture>
+      <zty-picture :data="tempData" :resolver="dataResolver"></zty-picture>
     </div>
-    <Picture :data="tempData" :resolver="dataResolver"></Picture>
+    <zty-picture :data="tempData" :resolver="dataResolver"></zty-picture>
   </div>
 </template>
 

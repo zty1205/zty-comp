@@ -1,7 +1,9 @@
 import ztyMarquee from './zty-marquee/index'
+import ztyPicture from './zty-picture/index'
 
 const components = {
-  ztyMarquee
+  ztyMarquee,
+  ztyPicture
 }
 
 // 定义 install 方法，接收 Vue 作为参数

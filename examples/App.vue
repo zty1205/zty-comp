@@ -6,7 +6,10 @@
     <div class="img">
       <zty-picture :data="tempData" :resolver="dataResolver"></zty-picture>
     </div>
-    <zty-picture :data="tempData" :resolver="dataResolver"></zty-picture>
+    <!-- <zty-picture :data="tempData" :resolver="dataResolver"></zty-picture> -->
+    <div class="btn" @click="toast">
+      来个toast
+    </div>
   </div>
 </template>
 
@@ -39,6 +42,9 @@ export default {
     dataResolver (data) {
       data.name = 'hh'
       return data
+    },
+    toast () {
+      this.$ztyToast.toggle('炎黄子孙')
     }
   }
 }
@@ -72,5 +78,17 @@ h1 {
 .img {
   width: 3.8rem;
   margin: 0 auto;
+}
+.btn {
+  width: 2rem;
+  height: .6rem;
+  line-height: .6rem;
+  font-size: .24rem;
+  text-align: center;
+  vertical-align: middle;
+  margin: 10px auto;
+  background: #ccc;
+  color: #fff;
+  border-radius: .3rem;
 }
 </style>

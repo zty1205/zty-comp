@@ -1,5 +1,6 @@
-import ztyMarquee from './zty-marquee/index'
-import ztyPicture from './zty-picture/index'
+import ztyMarquee from './zty-marquee'
+import ztyPicture from './zty-picture'
+import ztyToast from './zty-toast'
 
 const components = {
   ztyMarquee,
@@ -16,6 +17,8 @@ const install = function (Vue) {
   for (let comp of Object.values(components)) {
     Vue.component(comp.name, comp)
   }
+  // 原型链上
+  Vue.prototype.$ztyToast = ztyToast
 }
 if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)

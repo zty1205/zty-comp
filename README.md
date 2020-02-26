@@ -8,6 +8,9 @@ h5 rem layout marquee components
 ## zty-picture
 h5 rem layout picture components
 
+## zty-toast
+$ztyToast: a toast
+
 # use
 
 ```javascript

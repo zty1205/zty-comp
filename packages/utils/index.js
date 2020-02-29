@@ -1,8 +1,8 @@
-function setRem (pageSize) {
+export function setRem (pageSize) {
   const wWidth = window.innerWidth || document.body.clientWidth || document.documentElement.clientWidth
   document.getElementsByTagName('html')[0].style.fontSize = wWidth / pageSize * 100 + 'px'
 }
-function fixRem () {
+export function fixRem () {
   const html = document.getElementsByTagName('html')[0]
   const originFontSize = parseFloat(html.style.fontSize)
   const hideDom = document.createElement('div')
@@ -15,12 +15,16 @@ function fixRem () {
   hideDom.parentElement.removeChild(hideDom)
 }
 
-export default {
-  setRem,
-  fixRem
+export function noop () {}
+
+export function isFunction (val) {
+  return typeof val === 'function'
 }
 
-export {
-  setRem,
-  fixRem
+export function isObject (val) {
+  return val !== null && typeof val === 'object'
+}
+
+export function isPromise (val) {
+  return isObject(val) && isFunction(val.then) && isFunction(val.catch)
 }

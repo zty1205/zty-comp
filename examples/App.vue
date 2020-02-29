@@ -1,20 +1,37 @@
 <template>
   <div id="app">
     <h1>zty learing</h1>
-    <zty-marquee :data="marqueeList"></zty-marquee>
+    <!-- <zty-marquee :data="marqueeList"></zty-marquee>
     <div class="box"></div>
     <div class="img">
       <zty-picture :data="tempData" :resolver="dataResolver"></zty-picture>
-    </div>
+    </div> -->
     <!-- <zty-picture :data="tempData" :resolver="dataResolver"></zty-picture> -->
-    <div class="btn" @click="toast">
+    <!-- <div class="zty-valid-btn" @click="toast">
       来个toast
+    </div> -->
+    <div>
+      <zty-valid-btn :time="10"></zty-valid-btn>
     </div>
+    <div>
+      <zty-valid-btn :time="10" :beforeStart="beforeStart">
+        <template slot-scope="prop">
+          剩余{{ prop.stamp }}
+        </template>
+      </zty-valid-btn>
+    </div>
+     <div>
+       <zty-valid-btn :time="10" :beforeStart="beforeStart3">
+        <template slot-scope="prop">
+          剩余{{ prop.stamp }}
+        </template>
+      </zty-valid-btn>
+     </div>
   </div>
 </template>
 
 <script>
-import { setRem, fixRem } from '../utils'
+import { setRem, fixRem } from '@/utils/index'
 setRem(750)
 export default {
   name: 'App',
@@ -45,6 +62,22 @@ export default {
     },
     toast () {
       this.$ztyToast.toggle('炎黄子孙')
+    },
+    beforeStart () {
+      // eslint-disable-next-line promise/param-names
+      return new Promise(function (resolove, reject) {
+        setTimeout(() => {
+          resolove()
+        }, 1000)
+      })
+    },
+    beforeStart2 () {
+      // eslint-disable-next-line promise/param-names
+      return true
+    },
+    beforeStart3 () {
+      // eslint-disable-next-line promise/param-names
+      return false
     }
   }
 }
@@ -79,7 +112,7 @@ h1 {
   width: 3.8rem;
   margin: 0 auto;
 }
-.btn {
+.zty-valid-btn {
   width: 2rem;
   height: .6rem;
   line-height: .6rem;

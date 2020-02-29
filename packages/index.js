@@ -1,10 +1,12 @@
 import ztyMarquee from './zty-marquee'
 import ztyPicture from './zty-picture'
 import ztyToast from './zty-toast'
+import ztyValidBtn from './zty-valid-btn'
 
 const components = {
   ztyMarquee,
-  ztyPicture
+  ztyPicture,
+  ztyValidBtn
 }
 
 // 定义 install 方法，接收 Vue 作为参数
